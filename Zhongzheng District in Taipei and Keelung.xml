@@ -1,0 +1,15 @@
+<!--叫出中正區及中正區下的里，包括基隆與臺北-->
+<osm-script>
+  <query type="relation">
+    <has-kv k="name" v="中正區"/>
+  </query>
+  <union>
+    <item/>
+    <recurse type="relation-relation"/>
+  </union>
+  <union>
+    <item/>
+    <recurse type="down"/>
+  </union>
+  <print/>
+</osm-script>
