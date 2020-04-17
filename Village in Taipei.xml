@@ -1,0 +1,15 @@
+<!--叫出臺北市及下面的里-->
+<osm-script>
+ <id-query ref="1293250" type="relation"/>
+  
+  <union>
+    <item/>
+    <recurse type="relation-relation"/>
+     <recurse type="relation-relation"/>
+  </union>
+  <union>
+    <item/>
+    <recurse type="down"/>
+  </union>
+  <print/>
+</osm-script>
