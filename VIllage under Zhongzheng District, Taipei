@@ -1,0 +1,17 @@
+<!--臺北市中正區下的里-->
+<!--
+中正區的編號為r2783061
+-->
+<osm-script>
+ <id-query ref="2783061" type="relation"/>
+
+  <union>
+    <item/>
+    <recurse type="relation-relation"/>
+  </union>
+  <union>
+    <item/>
+    <recurse type="down"/>
+  </union>
+  <print/>
+</osm-script>
