@@ -1,0 +1,16 @@
+<!--查出被標成建築的學校-->
+<!--早期iD會將整個學校加上建築標籤，因此用這個 query 來找出誤標的資料-->
+<osm-script>
+  <query  type="way" >
+    <bbox-query {{bbox}}/>
+    <has-kv k="amenity" v="school"/>
+    <has-kv k="building" v="yes"/>
+  </query>
+<!-- added by auto repair -->
+<union into="_">
+  <item set="_"/>
+  <recurse from="_" type="down"/>
+</union>
+<!-- end of auto repair -->
+<print from="_" limit="" mode="meta" order="id"/>
+</osm-script>
