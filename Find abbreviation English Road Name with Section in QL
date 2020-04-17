@@ -1,0 +1,21 @@
+/*
+QA 用途的 query，找出英文路名段名用縮寫
+*/
+
+[out:xml]/*fixed by auto repair*/[timeout:225];
+// fetch area “TW” to search in
+
+// gather results
+(
+  // query part for: “building=yes and emergency=assembly_point and amenity!=*”
+  way["highway"]["name"]["name:en"~"Sec. [1-9]"]({{bbox}});
+);
+// print results
+out meta;/*fixed by auto repair*/
+>;
+out meta qt;/*fixed by auto repair*/
+{{style:
+node{
+  text: eval('tag("name:en")');
+}
+}}
