@@ -1,0 +1,11 @@
+[out:csv(::"type",::"id", name, admin_level,::"count")][date:"2017-06-06T00:00:00Z"][timeout:500];
+area["name:en"="Taiwan"][boundary];
+ rel(area)[boundary][admin_level~"4|6"];
+ map_to_area;
+ foreach->.d(
+   (.d;);out; 
+   (node(area.d)[amenity=pharmacy];
+    way(area.d)[amenity=pharmacy];
+    relation(area.d)[amenity=pharmacy];);
+   out count;
+ );
