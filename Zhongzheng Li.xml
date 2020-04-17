@@ -1,0 +1,11 @@
+<!--叫出中正區-->
+<osm-script>
+  <query type="relation">
+    <has-kv k="name" v="中正區"/>
+  </query>
+  <union>
+    <item/>
+    <recurse type="down"/>
+  </union>
+  <print/>
+</osm-script>
