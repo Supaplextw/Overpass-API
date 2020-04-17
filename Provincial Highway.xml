@@ -1,0 +1,21 @@
+<osm-script output="xml" timeout="25"><!-- fixed by auto repair -->
+  <!-- gather results -->
+  <union>
+    <!-- query part for: “highway=primary” -->
+    <query type="way">
+      <has-kv k="highway" v="primary"/>
+      <has-kv k="ref"/>
+      <bbox-query {{bbox}}/>
+    </query>
+  </union>
+    <query type="way">
+      <has-kv k="highway" v="primary_link"/>
+      <has-kv k="ref"/>
+      <bbox-query {{bbox}}/>
+    </query>
+  </union>
+  <!-- print results -->
+  <print mode="meta"/><!-- fixed by auto repair -->
+  <recurse type="down"/>
+  <print mode="meta" order="quadtile"/><!-- fixed by auto repair -->
+</osm-script>
