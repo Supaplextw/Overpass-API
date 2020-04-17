@@ -1,0 +1,13 @@
+<!--叫出視線所及的所有公車路線-->
+<osm-script output="json" timeout="200">
+  <union>
+    <query type="relation">
+      <has-kv k="route" v="bus"/>
+      <bbox-query {{bbox}}/>
+    </query>
+    <recurse type="relation-way"/>
+    <recurse type="way-node"/>
+  </union>
+  <print mode="body"/>
+  <print mode="skeleton" order="quadtile"/>
+</osm-script>
