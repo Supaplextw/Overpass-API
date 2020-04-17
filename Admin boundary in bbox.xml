@@ -8,10 +8,6 @@ The original search was:
   <!-- gather results -->
   <union>
     <!-- query part for: “boundary=administrative” -->
-    <query type="node">
-      <has-kv k="boundary" v="administrative"/>
-      <bbox-query {{bbox}}/>
-    </query>
     <query type="way">
 	 <has-kv k="boundary" v="administrative"/>
       <bbox-query {{bbox}}/>
