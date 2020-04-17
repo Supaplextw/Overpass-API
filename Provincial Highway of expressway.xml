@@ -1,0 +1,23 @@
+<osm-script output="xml" timeout="25"><!-- fixed by auto repair -->
+  <!-- gather results -->
+  <union>
+    <!-- query part for: “highway=expressway” -->
+    <query type="way">
+      <has-kv k="highway" v="expressway"/>
+      <has-kv k="ref"/>
+      <bbox-query {{bbox}}/>
+    </query>
+  </union>
+    <union>
+    <!-- query part for: “highway=expressway” -->
+    <query type="way">
+      <has-kv k="highway" v="expressway_link"/>
+      <has-kv k="ref"/>
+      <bbox-query {{bbox}}/>
+    </query>
+  </union>
+  <!-- print results -->
+  <print mode="meta"/><!-- fixed by auto repair -->
+  <recurse type="down"/>
+  <print mode="meta" order="quadtile"/><!-- fixed by auto repair -->
+</osm-script>
