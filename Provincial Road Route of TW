@@ -1,0 +1,12 @@
+[out:xml]/*fixed by auto repair*/[timeout:300];
+// fetch area “TW” to search in
+{{geocodeArea:TW}}->.searchArea;
+// gather results
+(
+  // query part for: “place=hamlet”
+  relation["type"="route"]["route"="road"]["network"~"TW:provincial|TW:express"](area.searchArea);
+);
+// print results
+out meta;/*fixed by auto repair*/
+>;
+out meta qt;/*fixed by auto repair*/
